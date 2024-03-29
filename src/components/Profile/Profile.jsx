@@ -1,7 +1,10 @@
 
-export default function Profile ({name, tag, location, image, stats}) {
+import css from "./Profile.module.css";
+
+
+export default function Profile({ name, tag, location, image, stats }) {
    return (
-    <div>
+    <div className={css.card}>
       <div>
         <img src={image} alt="User avatar" />
         <p>{name}</p>
@@ -9,7 +12,7 @@ export default function Profile ({name, tag, location, image, stats}) {
         <p>{location}</p>
       </div>
 
-      <ul>
+      <ul className={css.list}>
         <li>
           <span>Followers</span>
           <span>{stats.followers}</span>
