@@ -1,15 +1,26 @@
-// src/App.jsx
+import userData from "../userData.json";
+import friends from "../friends.json";
+import transactions from "../transactions.json";
 
-import Product from './Product';
+import Profile from './Profile';
+import FriendList from "./FriendList";
+import TransactionHistory from "./TransactionHistory";
+
 
 export default function App() {
-  return (
-    <div>
-      <h1>Best selling</h1>
-
-      <Product />
-      <Product />
-      <Product />
-    </div>
+ return (
+    <>
+      <Profile
+        name={userData.username}
+        tag={userData.tag}
+        location={userData.location}
+        image={userData.avatar}
+        stats={userData.stats}
+     />
+      <FriendList friends={friends} />
+      <TransactionHistory items={transactions} />
+    </>
   );
-}
+};
+
+
